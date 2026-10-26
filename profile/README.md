@@ -2,23 +2,22 @@
 
 ProseMirror-style rich text editing for JavaFX applications, kept in one place: the shared base modules and the generic components built on them.
 
-This organisation is new and has no published code yet.
+The first modules are here, early and unreleased: they are published as `0.1.0-SNAPSHOT` builds only, with no release on Maven Central yet.
 
 ## How it is organised
 
 Applications keep their own editor components. What turns out to be useful to more than one application is promoted here as a generic module or component, so that applications can use it as it is, or customise it, and so that the patterns can be refactored and improved in one place. An application with a completely different need builds its own component on whatever base modules are useful, and anything it builds that proves generic can later be brought here.
 
-## Planned modules
+## Modules
 
-These are plans, not releases.
+- [core](https://github.com/prosemirrorfx/core): the document model, schema, commands and input rules, with no JavaFX dependency.
+- [markdown](https://github.com/prosemirrorfx/markdown): markdown and clipboard HTML in and out, with a round trip that writes an unedited file back byte for byte.
+- [view](https://github.com/prosemirrorfx/view): the JavaFX view of a document, drawn natively with no WebView, and an embedding class for markdown notes.
+- [demo](https://github.com/prosemirrorfx/demo): a small application showing the editor on its own.
 
-- core: the document model, schema, transforms, commands and input rules, with no JavaFX dependency.
-- view: the JavaFX view of a document.
-- markdown: markdown import and export.
-- format: a light, block-addressed document format for people and AI to edit together.
-- demo: a small application showing the editor on its own.
+Planned, not started: format, a light, block-addressed document format for people and AI to edit together.
 
-Java packages and Maven coordinates use `io.github.prosemirrorfx`.
+Maven coordinates are `io.github.prosemirrorfx:prosemirrorfx-<module>`, and Java packages are `prosemirrorfx.<module>`. Snapshots come from Central's snapshot repository, `https://central.sonatype.com/repository/maven-snapshots/`.
 
 ## Built on
 
